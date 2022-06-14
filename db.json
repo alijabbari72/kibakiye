@@ -1,11 +1,26 @@
 {
-  "posts": [
+  "users": [
     {
       "id": 1,
-      "title": "hello"
+      "name": "ali",
+      "age": 30,
+      "relations":[
+        {
+          "rid": 2,
+          "active": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Razy",
+      "age": 30,
+      "relations":[
+        {
+          "rid": 1,
+          "active": true
+        }
+      ]
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
