@@ -1,30 +1,102 @@
-<html>
+<html charset>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
 
     <style type="text/css">
+        body{
+            margin: 0;
+            padding: 0;
+            direction: rtl;
+        }
         #mynetwork {
-            width: 600px;
-            height: 400px;
-            border: 1px solid lightgray;
+            width: 100%;
+            height: 100vh;
+            background-color: #000f23;
+        }
+        .logo{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 32px;
+            font-weight: bold;
+            background-color: #000f23;
+            text-align: center;
+            color: white;
+            padding: 16px;
         }
     </style>
 </head>
 <body>
+    <div class="logo">
+        KiBaKiye
+    </div>
 <div id="mynetwork"></div>
 
 <script type="text/javascript">
     // create an array with nodes
     var nodes = new vis.DataSet([
-        {id: 1, label: 'امین حیایی'},
-        {id: 2, label: 'مونا بانکی پور'},
-        {id: 3, label: 'نیلوفر خوش خلق'}
+        {id:1, label: 'امین حیایی', shape: "circularImage", image: "1.png", url:'https://google.com', x:'-20',y:'-20'},
+        {id: 2, label: 'مونا بانکی پور', shape: "circularImage", image: "2.png", x:'-20',y:'-20'},
+        {id: 3, label: 'نیلوفر خوش خلق', shape: "circularImage", image: "3.png", x:'-20',y:'-20'},
+        {id: 4, label: 'سپند امیر سلیمانی', shape: "circularImage", image: "4.png", x:'-20',y:'-20'},
+        {id: 5, label: 'مارال آراسته', shape: "circularImage", image: "5.png", x:'-20',y:'-20'},
+        {id: 6, label: 'حمید گودرزی', shape: "circularImage", image: "6.png", x:'-20',y:'-20'},
+        {id: 7, label: 'ماندانا دانشور', shape: "circularImage", image: "7.png", x:'-20',y:'-20'},
+        {id: 8, label: 'امین زندگانی', shape: "circularImage", image: "8.png", x:'-20',y:'-20'},
+        {id: 9, label: 'مینا لاکانی', shape: "circularImage", image: "9.png", x:'-20',y:'-20'},
+        {id: 10, label: 'الیکا عبدالرزاقی', shape: "circularImage", image: "10.png", x:'-20',y:'-20'},
+        {id: 11, label: 'فرشید نوابی', shape: "circularImage", image: "11.png", x:'-20',y:'-20'},
+        {id: 12, label: 'الهام چرخنده', shape: "circularImage", image: "12.png", x:'-20',y:'-20'},
+        {id: 13, label: 'سید محمد درویشی', shape: "circularImage", image: "13.png", x:'-20',y:'-20'},
+        {id: 14, label: 'سحر قریشی', shape: "circularImage", image: "14.png", x:'-20',y:'-20'},
+        {id: 15, label: 'مهران اخوان', shape: "circularImage", image: "15.png", x:'-20',y:'-20'},
+        {id: 16, label: 'امید علومی', shape: "circularImage", image: "16.png", x:'-20',y:'-20'},
+        {id: 17, label: 'مهدی طارمی', shape: "circularImage", image: "17.png", x:'-20',y:'-20'},
+        {id: 18, label: 'امیرحسین مقصودلو(تتلو)', shape: "circularImage", image: "18.png", x:'-20',y:'-20'},
+        {id: 19, label: 'لادن طباطبایی', shape: "circularImage", image: "19.png", x:'-20',y:'-20'},
+        {id: 20, label: 'نیلچی', shape: "circularImage", image: "20.png", x:'-20',y:'-20'},
+        {id: 21, label: 'سعید تهرانی', shape: "circularImage", image: "21.png", x:'-20',y:'-20'},
+        {id: 22, label: 'هومن سیدی', shape: "circularImage", image: "22.png", x:'-20',y:'-20'},
+        {id: 23, label: 'آزاده صمدی', shape: "circularImage", image: "23.png", x:'-20',y:'-20'},
+        {id: 24, label: 'بیتا اصلانی', shape: "circularImage", image: "24.png", x:'-20',y:'-20'},
+        {id: 25, label: 'نگار عابدی', shape: "circularImage", image: "25.png", x:'-20',y:'-20'},
+        {id: 26, label: 'هدایت هاشمی', shape: "circularImage", image: "26.png", x:'-20',y:'-20'},
+        {id: 27, label: 'مهشید ناصری', shape: "circularImage", image: "27.png", x:'-20',y:'-20'},
+        {id: 28, label: 'رامبد جوان', shape: "circularImage", image: "28.png", x:'-20',y:'-20'},
+        {id: 29, label: 'نگار جواهریان', shape: "circularImage", image: "29.png", x:'-20',y:'-20'},
+        {id: 30, label: 'ماندانا روحی', shape: "circularImage", image: "30.png", x:'-20',y:'-20'},
+        {id: 31, label: 'سحر دولتشاهی', shape: "circularImage", image: "31.png", x:'-20',y:'-20'},
+        {id: 32, label: 'همایون شجریان', shape: "circularImage", image: "32.png", x:'-20',y:'-20'},
+        {id: 33, label: 'گیتا خوانساری', shape: "circularImage", image: "33.png", x:'-20',y:'-20'},
     ]);
 
     // create an array with edges
     var edges = new vis.DataSet([
-        {from: 1, to: 3, color: 'black'},
-        {from: 1, to: 2, color: '#eaeaea'},
+        {from: 1, to: 3, color: '#eaeaea'},
+        {from: 1, to: 2, color: '#eaeaea' , dashes:true},
+        {from: 4, to: 5, color: '#eaeaea' , dashes:true},
+        {from: 6, to: 7, color: '#eaeaea' , dashes:true},
+        {from: 8, to: 9, color: '#eaeaea' , dashes:true},
+        {from: 8, to: 10, color: '#eaeaea'},
+        {from: 11, to: 12, color: '#eaeaea' , dashes:true},
+        {from: 12, to: 13, color: '#eaeaea'},
+        {from: 14, to: 15, color: '#eaeaea' , dashes:true},
+        {from: 14, to: 17, color: '#eaeaea' , dashes:true},
+        {from: 14, to: 16, color: '#eaeaea' , dashes:true},
+        {from: 14, to: 18, color: '#eaeaea'},
+        {from: 19, to: 21, color: '#eaeaea'},
+        {from: 19, to: 20, color: '#eaeaea' , dashes:true},
+        {from: 22, to: 24, color: '#eaeaea'},
+        {from: 22, to: 23, color: '#eaeaea' , dashes:true},
+        {from: 25, to: 26, color: '#eaeaea' , dashes:true},
+        {from: 26, to: 27, color: '#eaeaea'},
+        {from: 28, to: 29, color: '#eaeaea'},
+        {from: 28, to: 30, color: '#eaeaea' , dashes:true},
+        {from: 28, to: 31, color: '#eaeaea' , dashes:true},
+        {from: 32, to: 31, color: '#eaeaea'},
+        {from: 32, to: 33, color: '#eaeaea' , dashes:true},
+
     ]);
 
     // create a network
@@ -35,10 +107,35 @@
         nodes: nodes,
         edges: edges
     };
-    var options = {};
+    
+    var options = {
+  nodes: {
+    shape: "dot",
+    size: 36,
+    font: {
+        multi: "html",
+        size: 14,
+        color: "#eeeeee",
+        face: 'Vazir',
+    },
+    borderWidth: 2,
+    shadow: true,
+  },
+  edges: {
+    width: 2,
+    shadow: true,
+  },
+};
 
     // initialize your network!
     var network = new vis.Network(container, data, options);
+
+    network.on("selectNode", function (params) {
+        if (params.nodes.length === 1) {
+            var node = nodes.get(params.nodes[0]);
+            window.open(node.url, '_blank');
+        }
+    });
 </script>
 </body>
 </html>
